@@ -1,0 +1,20 @@
+1280 rem *** gen food ***
+1285 rem genera il cibo alla pos. casuale
+1290 pk=peek(ps(ff%)+1024):ff%=ff%+1
+1295 if ff%>=nf% then ff%=0
+1300 if pk<>32 then 1290
+1305 c=9:poke ps(ff%)+1024,fo%
+1310 poke ps(ff%)+55296,c
+1320 return
+1330 rem *** elongate ***
+1335 rem allunga il verme
+1340 for i=wl% to ih%+2 step -1
+1345 w1(i)=w1(i-1)
+1350 next
+1355 rem immette valore vecchia coda e allunga
+1360 w1(ih%)+1=vc:wl%=wl%+1
+1365 return
+
+
+2955 if pk=fo% then gosub 1330
+2956 if pk=fo% then gosub 1280
